@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { LoadingOutlined } from '@ant-design/icons';
 import {
 	Skeleton,
 	Spin,
@@ -22,6 +21,7 @@ import {
 	HostRowData,
 	HostsListTableProps,
 } from './utils';
+import { Loader } from '@signozhq/icons';
 
 function EmptyOrLoadingView(
 	viewState: EmptyOrLoadingViewProps,
@@ -243,7 +243,9 @@ export default function HostsListTable({
 			scroll={{ x: true }}
 			loading={{
 				spinning: showTableLoadingState,
-				indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+				indicator: (
+					<Spin indicator={<Loader size={14} className="animate-spin" />} />
+				),
 			}}
 			tableLayout="fixed"
 			rowKey={(record): string =>

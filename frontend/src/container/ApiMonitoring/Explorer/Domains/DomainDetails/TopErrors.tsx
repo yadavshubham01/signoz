@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { QueryFunctionContext, useQueries, useQuery } from 'react-query';
-import { LoadingOutlined } from '@ant-design/icons';
 import { Spin, Switch, Table, Tooltip, Typography } from 'antd';
 import { getQueryRangeV5 } from 'api/v5/queryRange/getQueryRange';
 import { MetricRangePayloadV5, ScalarData } from 'api/v5/v5';
@@ -27,6 +26,7 @@ import { DataSource } from 'types/common/queryBuilder';
 import EndPointsDropDown from './components/EndPointsDropDown';
 import ErrorState from './components/ErrorState';
 import { SPAN_ATTRIBUTES } from './constants';
+import { Loader } from '@signozhq/icons';
 
 function TopErrors({
 	domainName,
@@ -200,7 +200,9 @@ function TopErrors({
 					columns={topErrorsColumnsConfig}
 					loading={{
 						spinning: isLoading || isRefetching,
-						indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+						indicator: (
+							<Spin indicator={<Loader size={14} className="animate-spin" />} />
+						),
 					}}
 					dataSource={isLoading || isRefetching ? [] : formattedTopErrorsData}
 					locale={{

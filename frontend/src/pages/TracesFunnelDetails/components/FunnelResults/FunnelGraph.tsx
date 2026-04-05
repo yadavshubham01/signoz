@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useState } from 'react';
-import { LoadingOutlined } from '@ant-design/icons';
 import { Empty, Spin } from 'antd';
 import {
 	BarController,
@@ -17,6 +16,7 @@ import { useFunnelStepsGraphData } from 'hooks/TracesFunnels/useFunnels';
 import { useFunnelContext } from 'pages/TracesFunnels/FunnelContext';
 
 import './FunnelGraph.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 // Register required components
 Chart.register(
@@ -101,7 +101,7 @@ function FunnelGraph(): JSX.Element {
 	}
 
 	return (
-		<Spin spinning={isFetching} indicator={<LoadingOutlined spin />}>
+		<Spin spinning={isFetching} indicator={<Loader className="animate-spin" />}>
 			<div className={cx('funnel-graph', `funnel-graph--${totalSteps}-columns`)}>
 				<div className="funnel-graph__chart-container">
 					<canvas ref={canvasRef} />

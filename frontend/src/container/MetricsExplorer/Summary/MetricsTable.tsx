@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { LoadingOutlined } from '@ant-design/icons';
 import {
 	Spin,
 	Table,
@@ -15,6 +14,7 @@ import { Info } from 'lucide-react';
 
 import { MetricsListItemRowData, MetricsTableProps } from './types';
 import { getMetricsTableColumns } from './utils';
+import { Loader } from '@signozhq/icons';
 
 function MetricsTable({
 	isLoading,
@@ -82,7 +82,7 @@ function MetricsTable({
 						indicator: (
 							<Spin
 								data-testid="metrics-table-loading-state"
-								indicator={<LoadingOutlined size={14} spin />}
+								indicator={<Loader size={14} className="animate-spin" />}
 							/>
 						),
 					}}

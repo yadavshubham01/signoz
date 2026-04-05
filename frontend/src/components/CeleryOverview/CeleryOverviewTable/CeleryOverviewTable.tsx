@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useMutation } from 'react-query';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-import { LoadingOutlined, SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@ant-design/icons';
 import { Color } from '@signozhq/design-tokens';
 import {
 	Button,
@@ -34,6 +34,7 @@ import { GlobalReducer } from 'types/reducer/globalTime';
 import { formatNumericValue } from 'utils/numericUtils';
 
 import './CeleryOverviewTable.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 const INITIAL_PAGE_SIZE = 20;
 
@@ -518,7 +519,9 @@ export default function CeleryOverviewTable({
 				bordered={false}
 				loading={{
 					spinning: isLoading,
-					indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+					indicator: (
+						<Spin indicator={<Loader size={14} className="animate-spin" />} />
+					),
 				}}
 				locale={{
 					emptyText: isLoading ? null : <Typography.Text>No data</Typography.Text>,

@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CaretDownOutlined, LoadingOutlined } from '@ant-design/icons';
+import { CaretDownOutlined } from '@ant-design/icons';
 import {
 	Modal,
 	Select,
@@ -23,6 +23,7 @@ import {
 import { v4 as uuid } from 'uuid';
 
 import './MessagingQueueHealthCheck.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 interface AttributeCheckListProps {
 	visible: boolean;
@@ -228,7 +229,7 @@ function AttributeCheckList({
 		>
 			{loading ? (
 				<div className="loader-container">
-					<Spin indicator={<LoadingOutlined spin />} size="large" />
+					<Spin indicator={<Loader className="animate-spin" />} size="large" />
 				</div>
 			) : (
 				<div className="modal-content">

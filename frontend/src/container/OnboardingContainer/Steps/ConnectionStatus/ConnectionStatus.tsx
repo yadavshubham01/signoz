@@ -1,11 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	CheckCircleTwoTone,
-	CloseCircleTwoTone,
-	LoadingOutlined,
-} from '@ant-design/icons';
+import { CheckCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons';
 import logEvent from 'api/common/logEvent';
 import MessagingQueueHealthCheck from 'components/MessagingQueueHealthCheck/MessagingQueueHealthCheck';
 import { QueryParams } from 'constants/query';
@@ -24,6 +20,7 @@ import { GlobalReducer } from 'types/reducer/globalTime';
 import { Tags } from 'types/reducer/trace';
 
 import './ConnectionStatus.styles.scss';
+import { LoaderCircle } from 'lucide-react';
 
 const pollingInterval = 10000;
 
@@ -334,7 +331,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<div className="label"> Status </div>
 
 					<div className="status">
-						{isQueryServiceLoading && <LoadingOutlined />}
+						{isQueryServiceLoading && <LoaderCircle className="animate-spin" />}
 						{!isQueryServiceLoading &&
 							isReceivingData &&
 							(getStartedSource !== 'kafka' ? (

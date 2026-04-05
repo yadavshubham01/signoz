@@ -1,5 +1,4 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
-import { LoadingOutlined } from '@ant-design/icons';
 import { Button, Input, Spin } from 'antd';
 import cx from 'classnames';
 import OverlayScrollbar from 'components/OverlayScrollbar/OverlayScrollbar';
@@ -23,6 +22,7 @@ import { Span } from 'types/api/trace/getTraceV2';
 import { FunnelData } from 'types/api/traceFunnels';
 
 import './AddSpanToFunnelModal.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 enum ModalView {
 	LIST = 'list',
@@ -215,7 +215,7 @@ function AddSpanToFunnelModal({
 					<Spin
 						className="add-span-to-funnel-modal__loading-spinner"
 						spinning={isFunnelDetailsLoading || isFunnelDetailsFetching}
-						indicator={<LoadingOutlined spin />}
+						indicator={<Loader className="animate-spin" />}
 					>
 						{selectedFunnelId && funnelDetails?.payload && (
 							<FunnelProvider

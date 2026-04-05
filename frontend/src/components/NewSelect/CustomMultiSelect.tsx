@@ -7,11 +7,7 @@ import React, {
 	useState,
 } from 'react';
 import { Virtuoso } from 'react-virtuoso';
-import {
-	DownOutlined,
-	LoadingOutlined,
-	ReloadOutlined,
-} from '@ant-design/icons';
+import { DownOutlined, ReloadOutlined } from '@ant-design/icons';
 import { Color } from '@signozhq/design-tokens';
 import { Button, Checkbox, Select, Typography } from 'antd';
 import cx from 'classnames';
@@ -33,6 +29,7 @@ import {
 } from './utils';
 
 import './styles.scss';
+import { Loader } from '@signozhq/icons';
 
 enum ToggleTagValue {
 	Only = 'Only',
@@ -1691,7 +1688,7 @@ const CustomMultiSelect: React.FC<CustomMultiSelectProps> = ({
 					{loading && (
 						<div className="navigation-loading">
 							<div className="navigation-icons">
-								<LoadingOutlined />
+								<Loader className="animate-spin" />
 							</div>
 							<div className="navigation-text">Refreshing values...</div>
 						</div>
@@ -1699,7 +1696,7 @@ const CustomMultiSelect: React.FC<CustomMultiSelectProps> = ({
 					{!loading && waitingMessage && (
 						<div className="navigation-loading">
 							<div className="navigation-icons">
-								<LoadingOutlined />
+								<Loader className="animate-spin" />
 							</div>
 							<div className="navigation-text" title={waitingMessage}>
 								{waitingMessage}

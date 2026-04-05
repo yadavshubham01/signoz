@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-import { LoadingOutlined } from '@ant-design/icons';
 import {
 	Button,
 	Spin,
@@ -61,6 +60,7 @@ import {
 import PodDetails from './PodDetails/PodDetails';
 
 import '../InfraMonitoringK8s.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 function K8sPodsList({
 	isFiltersVisible,
@@ -582,7 +582,9 @@ function K8sPodsList({
 						showHeader={false}
 						loading={{
 							spinning: isFetchingGroupedByRowData || isLoadingGroupedByRowData,
-							indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+							indicator: (
+								<Spin indicator={<Loader size={14} className="animate-spin" />} />
+							),
 						}}
 						onRow={(
 							record: K8sPodsRowData,
@@ -705,7 +707,9 @@ function K8sPodsList({
 				}}
 				loading={{
 					spinning: showTableLoadingState,
-					indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+					indicator: (
+						<Spin indicator={<Loader size={14} className="animate-spin" />} />
+					),
 				}}
 				locale={{
 					emptyText: showTableLoadingState ? null : (

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-import { LoadingOutlined } from '@ant-design/icons';
 import { Spin, Table } from 'antd';
 import logEvent from 'api/common/logEvent';
 import cx from 'classnames';
@@ -29,6 +28,7 @@ import { columnsConfig, formatDataForTable } from '../../utils';
 import DomainDetails from './DomainDetails/DomainDetails';
 
 import '../Explorer.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 function DomainList(): JSX.Element {
 	const [params, setParams] = useApiMonitoringParams();
@@ -167,7 +167,9 @@ function DomainList(): JSX.Element {
 					columns={columnsConfig}
 					loading={{
 						spinning: isFetching || isLoading,
-						indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+						indicator: (
+							<Spin indicator={<Loader size={14} className="animate-spin" />} />
+						),
 					}}
 					scroll={{ x: true }}
 					tableLayout="fixed"

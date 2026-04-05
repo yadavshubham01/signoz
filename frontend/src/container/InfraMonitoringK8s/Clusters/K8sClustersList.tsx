@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-import { LoadingOutlined } from '@ant-design/icons';
 import {
 	Button,
 	Spin,
@@ -53,6 +52,7 @@ import {
 
 import '../InfraMonitoringK8s.styles.scss';
 import './K8sClustersList.styles.scss';
+import { Loader } from '@signozhq/icons';
 
 function K8sClustersList({
 	isFiltersVisible,
@@ -486,7 +486,9 @@ function K8sClustersList({
 						size="small"
 						loading={{
 							spinning: isFetchingGroupedByRowData || isLoadingGroupedByRowData,
-							indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+							indicator: (
+								<Spin indicator={<Loader size={14} className="animate-spin" />} />
+							),
 						}}
 						showHeader={false}
 						onRow={(
@@ -648,7 +650,9 @@ function K8sClustersList({
 				scroll={{ x: true }}
 				loading={{
 					spinning: showTableLoadingState,
-					indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+					indicator: (
+						<Spin indicator={<Loader size={14} className="animate-spin" />} />
+					),
 				}}
 				locale={{
 					emptyText: showTableLoadingState ? null : (

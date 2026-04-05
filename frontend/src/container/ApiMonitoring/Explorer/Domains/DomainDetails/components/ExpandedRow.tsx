@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { useQueries } from 'react-query';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-import { LoadingOutlined } from '@ant-design/icons';
 import { Spin, Table } from 'antd';
 import type { ColumnType } from 'antd/lib/table';
 import logEvent from 'api/common/logEvent';
@@ -24,6 +23,7 @@ import { OrderByPayload } from 'types/api/queryBuilder/queryBuilderData';
 import { GlobalReducer } from 'types/reducer/globalTime';
 
 import { VIEW_TYPES, VIEWS } from '../constants';
+import { Loader } from '@signozhq/icons';
 
 function ExpandedRow({
 	domainName,
@@ -116,7 +116,9 @@ function ExpandedRow({
 						showHeader={false}
 						loading={{
 							spinning: groupedByRowQuery?.isFetching || groupedByRowQuery?.isLoading,
-							indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+							indicator: (
+								<Spin indicator={<Loader size={14} className="animate-spin" />} />
+							),
 						}}
 						onRow={(record): { onClick: () => void; className: string } => ({
 							onClick: (): void => {

@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-	CheckCircleTwoTone,
-	CloseCircleTwoTone,
-	LoadingOutlined,
-} from '@ant-design/icons';
+import { CheckCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons';
 import logEvent from 'api/common/logEvent';
 import { DEFAULT_ENTITY_VERSION } from 'constants/app';
 import { PANEL_TYPES } from 'constants/queryBuilder';
@@ -19,6 +15,7 @@ import { EQueryType } from 'types/common/dashboard';
 import { DataSource, ReduceOperators } from 'types/common/queryBuilder';
 
 import './LogsConnectionStatus.styles.scss';
+import { LoaderCircle } from '@signozhq/icons';
 
 const enum ApplicationLogsType {
 	FROM_LOG_FILE = 'from-log-file',
@@ -241,7 +238,7 @@ export default function LogsConnectionStatus(): JSX.Element {
 					<div className="label"> Status </div>
 
 					<div className="status">
-						{(loading || isFetching) && <LoadingOutlined />}
+						{(loading || isFetching) && <LoaderCircle className="animate-spin" />}
 						{!(loading || isFetching) && isReceivingData && (
 							<>
 								<CheckCircleTwoTone twoToneColor="#52c41a" />

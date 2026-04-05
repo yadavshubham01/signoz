@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-import { LoadingOutlined } from '@ant-design/icons';
 import { Color } from '@signozhq/design-tokens';
 import { Spin } from 'antd';
 import { CircleCheck } from 'lucide-react';
 
 import './QueryStatus.styles.scss';
+import { LoaderCircle } from '@signozhq/icons';
 
 interface IQueryStatusProps {
 	loading: boolean;
@@ -19,7 +19,13 @@ export default function QueryStatus(
 
 	const content = useMemo((): React.ReactElement => {
 		if (loading) {
-			return <Spin spinning size="small" indicator={<LoadingOutlined spin />} />;
+			return (
+				<Spin
+					spinning
+					size="small"
+					indicator={<LoaderCircle className="animate-spin" />}
+				/>
+			);
 		}
 		if (error) {
 			return (

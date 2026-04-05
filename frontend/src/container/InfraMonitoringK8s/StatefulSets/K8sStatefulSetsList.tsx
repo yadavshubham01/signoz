@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-import { LoadingOutlined } from '@ant-design/icons';
 import {
 	Button,
 	Spin,
@@ -21,7 +20,7 @@ import { useGetK8sStatefulSetsList } from 'hooks/infraMonitoring/useGetK8sStatef
 import { useGetAggregateKeys } from 'hooks/queryBuilder/useGetAggregateKeys';
 import { useQueryBuilder } from 'hooks/queryBuilder/useQueryBuilder';
 import { useQueryOperations } from 'hooks/queryBuilder/useQueryBuilderOperations';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight, Loader } from 'lucide-react';
 import { useAppContext } from 'providers/App/App';
 import { AppState } from 'store/reducers';
 import { IBuilderQuery } from 'types/api/queryBuilder/queryBuilderData';
@@ -506,7 +505,9 @@ function K8sStatefulSetsList({
 						size="small"
 						loading={{
 							spinning: isFetchingGroupedByRowData || isLoadingGroupedByRowData,
-							indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+							indicator: (
+								<Spin indicator={<Loader size={14} className="animate-spin" />} />
+							),
 						}}
 						showHeader={false}
 						onRow={(
@@ -674,7 +675,9 @@ function K8sStatefulSetsList({
 				scroll={{ x: true }}
 				loading={{
 					spinning: showTableLoadingState,
-					indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
+					indicator: (
+						<Spin indicator={<Loader size={14} className="animate-spin" />} />
+					),
 				}}
 				locale={{
 					emptyText: showTableLoadingState ? null : (
