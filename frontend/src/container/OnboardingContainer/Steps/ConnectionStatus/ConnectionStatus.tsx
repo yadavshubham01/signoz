@@ -20,7 +20,7 @@ import { GlobalReducer } from 'types/reducer/globalTime';
 import { Tags } from 'types/reducer/trace';
 
 import './ConnectionStatus.styles.scss';
-import { LoaderCircle } from 'lucide-react';
+import { LoaderCircle } from '@signozhq/icons';
 
 const pollingInterval = 10000;
 
