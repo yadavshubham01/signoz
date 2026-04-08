@@ -344,8 +344,8 @@ function FullView({
 									version={selectedDashboard?.data?.version || 'v3'}
 									isListViewPanel={selectedPanelType === PANEL_TYPES.LIST}
 									signalSourceChangeEnabled
-								// filterConfigs={filterConfigs}
-								// queryComponents={queryComponents}
+									// filterConfigs={filterConfigs}
+									// queryComponents={queryComponents}
 								/>
 								<RightToolbarActions
 									onStageRunQuery={(): void => {

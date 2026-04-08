@@ -506,7 +506,7 @@ function K8sClustersList({
 					/>
 
 					{groupedByRowData?.payload?.data?.total &&
-						groupedByRowData?.payload?.data?.total > 10 ? (
+					groupedByRowData?.payload?.data?.total > 10 ? (
 						<div className="expanded-table-footer">
 							<Button
 								type="default"

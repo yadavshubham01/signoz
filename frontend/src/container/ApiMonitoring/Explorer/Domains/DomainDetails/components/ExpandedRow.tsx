@@ -79,16 +79,16 @@ function ExpandedRow({
 	const groupedByRowQueries = useQueries(
 		groupedByRowDataQueryPayload
 			? groupedByRowDataQueryPayload.map((payload) => ({
-				queryKey: [
-					`${REACT_QUERY_KEY.GET_NESTED_ENDPOINTS_LIST}-${domainName}-${selectedRowData?.key}`,
-					payload,
-					ENTITY_VERSION_V4,
-					selectedRowData?.key,
-				],
-				queryFn: (): Promise<SuccessResponse<MetricRangePayloadProps>> =>
-					GetMetricQueryRange(payload, ENTITY_VERSION_V4),
-				enabled: !!payload && !!selectedRowData,
-			}))
+					queryKey: [
+						`${REACT_QUERY_KEY.GET_NESTED_ENDPOINTS_LIST}-${domainName}-${selectedRowData?.key}`,
+						payload,
+						ENTITY_VERSION_V4,
+						selectedRowData?.key,
+					],
+					queryFn: (): Promise<SuccessResponse<MetricRangePayloadProps>> =>
+						GetMetricQueryRange(payload, ENTITY_VERSION_V4),
+					enabled: !!payload && !!selectedRowData,
+			  }))
 			: [],
 	);
 
@@ -104,10 +104,10 @@ function ExpandedRow({
 						dataSource={
 							groupedByRowQuery?.data
 								? formatEndPointsDataForTable(
-									groupedByRowQuery.data?.payload.data.result[0].table?.rows,
-									[],
-									orderBy,
-								)
+										groupedByRowQuery.data?.payload.data.result[0].table?.rows,
+										[],
+										orderBy,
+								  )
 								: []
 						}
 						pagination={false}
