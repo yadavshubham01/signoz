@@ -30,9 +30,13 @@ export function getDeploymentStageIcon(value: string): JSX.Element {
 			return (
 				<Spin
 					indicator={
-						<span role="img" aria-label="loading" data-icon="loading">
-							<Loader size="large" className="animate-spin" />
-						</span>
+						<Loader
+							size="large"
+							className="animate-spin"
+							role="img"
+							aria-label="loading"
+							data-icon="loading"
+						/>
 					}
 				/>
 			);
