@@ -4,6 +4,7 @@ import { useMutation } from 'react-query';
 import { useSelector } from 'react-redux';
 import { SearchOutlined } from '@ant-design/icons';
 import { Color } from '@signozhq/design-tokens';
+import { Loader } from '@signozhq/icons';
 import {
 	Button,
 	Input,
@@ -34,7 +35,6 @@ import { GlobalReducer } from 'types/reducer/globalTime';
 import { formatNumericValue } from 'utils/numericUtils';
 
 import './CeleryOverviewTable.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 const INITIAL_PAGE_SIZE = 20;
 

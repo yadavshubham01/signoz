@@ -9,6 +9,7 @@ import React, {
 import { Virtuoso } from 'react-virtuoso';
 import { DownOutlined, ReloadOutlined } from '@ant-design/icons';
 import { Color } from '@signozhq/design-tokens';
+import { Loader } from '@signozhq/icons';
 import { Button, Checkbox, Select, Typography } from 'antd';
 import cx from 'classnames';
 import TextToolTip from 'components/TextToolTip/TextToolTip';
@@ -29,7 +30,6 @@ import {
 } from './utils';
 
 import './styles.scss';
-import { Loader } from '@signozhq/icons';
 
 enum ToggleTagValue {
 	Only = 'Only',

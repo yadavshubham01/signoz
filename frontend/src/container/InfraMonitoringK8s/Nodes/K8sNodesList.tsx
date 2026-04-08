@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
+import { Loader } from '@signozhq/icons';
 import {
 	Button,
 	Spin,
@@ -56,7 +57,6 @@ import {
 
 import '../InfraMonitoringK8s.styles.scss';
 import './K8sNodesList.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 function K8sNodesList({
 	isFiltersVisible,
@@ -504,7 +504,7 @@ function K8sNodesList({
 					/>
 
 					{groupedByRowData?.payload?.data?.total &&
-					groupedByRowData?.payload?.data?.total > 10 ? (
+						groupedByRowData?.payload?.data?.total > 10 ? (
 						<div className="expanded-table-footer">
 							<Button
 								type="default"

@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
+import { Loader } from '@signozhq/icons';
 import {
 	Skeleton,
 	Spin,
@@ -21,7 +22,6 @@ import {
 	HostRowData,
 	HostsListTableProps,
 } from './utils';
-import { Loader } from '@signozhq/icons';
 
 function EmptyOrLoadingView(
 	viewState: EmptyOrLoadingViewProps,

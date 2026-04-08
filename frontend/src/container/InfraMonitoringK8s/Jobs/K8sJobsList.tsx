@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
-
+import { Loader } from '@signozhq/icons';
 import {
 	Button,
 	Spin,
@@ -58,7 +58,6 @@ import {
 
 import '../InfraMonitoringK8s.styles.scss';
 import './K8sJobsList.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 function K8sJobsList({
 	isFiltersVisible,

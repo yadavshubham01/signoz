@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useQueries } from 'react-query';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
+import { Loader } from '@signozhq/icons';
 import { Spin, Table } from 'antd';
 import type { ColumnType } from 'antd/lib/table';
 import logEvent from 'api/common/logEvent';
@@ -23,7 +24,6 @@ import { OrderByPayload } from 'types/api/queryBuilder/queryBuilderData';
 import { GlobalReducer } from 'types/reducer/globalTime';
 
 import { VIEW_TYPES, VIEWS } from '../constants';
-import { Loader } from '@signozhq/icons';
 
 function ExpandedRow({
 	domainName,
@@ -79,16 +79,16 @@ function ExpandedRow({
 	const groupedByRowQueries = useQueries(
 		groupedByRowDataQueryPayload
 			? groupedByRowDataQueryPayload.map((payload) => ({
-					queryKey: [
-						`${REACT_QUERY_KEY.GET_NESTED_ENDPOINTS_LIST}-${domainName}-${selectedRowData?.key}`,
-						payload,
-						ENTITY_VERSION_V4,
-						selectedRowData?.key,
-					],
-					queryFn: (): Promise<SuccessResponse<MetricRangePayloadProps>> =>
-						GetMetricQueryRange(payload, ENTITY_VERSION_V4),
-					enabled: !!payload && !!selectedRowData,
-			  }))
+				queryKey: [
+					`${REACT_QUERY_KEY.GET_NESTED_ENDPOINTS_LIST}-${domainName}-${selectedRowData?.key}`,
+					payload,
+					ENTITY_VERSION_V4,
+					selectedRowData?.key,
+				],
+				queryFn: (): Promise<SuccessResponse<MetricRangePayloadProps>> =>
+					GetMetricQueryRange(payload, ENTITY_VERSION_V4),
+				enabled: !!payload && !!selectedRowData,
+			}))
 			: [],
 	);
 
@@ -104,10 +104,10 @@ function ExpandedRow({
 						dataSource={
 							groupedByRowQuery?.data
 								? formatEndPointsDataForTable(
-										groupedByRowQuery.data?.payload.data.result[0].table?.rows,
-										[],
-										orderBy,
-								  )
+									groupedByRowQuery.data?.payload.data.result[0].table?.rows,
+									[],
+									orderBy,
+								)
 								: []
 						}
 						pagination={false}

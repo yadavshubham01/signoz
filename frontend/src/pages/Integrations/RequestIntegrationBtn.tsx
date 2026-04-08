@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { LoaderCircle } from '@signozhq/icons';
 import { Button, Input, Space, Typography } from 'antd';
 import logEvent from 'api/common/logEvent';
 import { useNotifications } from 'hooks/useNotifications';
 import { Check } from 'lucide-react';
 
 import './Integrations.styles.scss';
-import { LoaderCircle } from '@signozhq/icons';
 
 export enum IntegrationType {
 	AWS_SERVICES = 'aws-services',

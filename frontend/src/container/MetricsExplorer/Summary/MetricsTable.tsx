@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { Loader } from '@signozhq/icons';
 import {
 	Spin,
 	Table,
@@ -14,7 +15,6 @@ import { Info } from 'lucide-react';
 
 import { MetricsListItemRowData, MetricsTableProps } from './types';
 import { getMetricsTableColumns } from './utils';
-import { Loader } from '@signozhq/icons';
 
 function MetricsTable({
 	isLoading,

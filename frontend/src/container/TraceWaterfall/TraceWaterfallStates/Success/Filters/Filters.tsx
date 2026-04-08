@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { InfoCircleOutlined } from '@ant-design/icons';
+import { Loader } from '@signozhq/icons';
 import { Button, Spin, Tooltip, Typography } from 'antd';
 import { AxiosError } from 'axios';
 import { DEFAULT_ENTITY_VERSION } from 'constants/app';
@@ -16,7 +17,6 @@ import { TracesAggregatorOperator } from 'types/common/queryBuilder';
 import { BASE_FILTER_QUERY } from './constants';
 
 import './Filters.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 function prepareQuery(filters: TagFilter, traceID: string): Query {
 	return {

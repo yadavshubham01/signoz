@@ -29,7 +29,11 @@ export function getDeploymentStageIcon(value: string): JSX.Element {
 		case 'in_progress':
 			return (
 				<Spin
-					indicator={<Loader size={15} className="animate-spin" />}
+					indicator={
+						<span role="img" aria-label="loading" data-icon="loading">
+							<Loader size="large" className="animate-spin" />
+						</span>
+					}
 				/>
 			);
 		case 'deployed':

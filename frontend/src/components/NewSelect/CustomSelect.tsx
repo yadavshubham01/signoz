@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { CloseOutlined, DownOutlined, ReloadOutlined } from '@ant-design/icons';
 import { Color } from '@signozhq/design-tokens';
+import { Loader } from '@signozhq/icons';
 import { Select } from 'antd';
 import cx from 'classnames';
 import TextToolTip from 'components/TextToolTip';
@@ -27,7 +28,6 @@ import {
 } from './utils';
 
 import './styles.scss';
-import { Loader } from '@signozhq/icons';
 
 /**
  * CustomSelect Component

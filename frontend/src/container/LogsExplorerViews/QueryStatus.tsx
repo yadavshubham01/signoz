@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { Color } from '@signozhq/design-tokens';
+import { LoaderCircle } from '@signozhq/icons';
 import { Spin } from 'antd';
 import { CircleCheck } from 'lucide-react';
 
 import './QueryStatus.styles.scss';
-import { LoaderCircle } from '@signozhq/icons';
 
 interface IQueryStatusProps {
 	loading: boolean;

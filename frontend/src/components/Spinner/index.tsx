@@ -1,6 +1,7 @@
 import { CSSProperties } from 'react';
-import { Spin, SpinProps } from 'antd';
 import { Loader } from '@signozhq/icons';
+import { Spin, SpinProps } from 'antd';
+
 import { SpinerStyle } from './styles';
 
 function Spinner({ size, tip, height, style }: SpinnerProps): JSX.Element {
@@ -10,7 +11,11 @@ function Spinner({ size, tip, height, style }: SpinnerProps): JSX.Element {
 				spinning
 				size={size}
 				tip={tip}
-				indicator={<Loader className="animate-spin" />}
+				indicator={
+					<span role="img" aria-label="loading">
+						<Loader size="large" className="animate-spin" />
+					</span>
+				}
 			/>
 		</SpinerStyle>
 	);

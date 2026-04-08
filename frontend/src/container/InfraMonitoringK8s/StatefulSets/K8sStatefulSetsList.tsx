@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
+import { Loader } from '@signozhq/icons';
 import {
 	Button,
 	Spin,
@@ -27,7 +28,7 @@ import { IBuilderQuery } from 'types/api/queryBuilder/queryBuilderData';
 import { GlobalReducer } from 'types/reducer/globalTime';
 import { buildAbsolutePath, isModifierKeyPressed } from 'utils/app';
 import { openInNewTab } from 'utils/navigation';
-import { Loader } from '@signozhq/icons';
+
 import {
 	GetK8sEntityToAggregateAttribute,
 	INFRA_MONITORING_K8S_PARAMS_KEYS,
@@ -525,7 +526,7 @@ function K8sStatefulSetsList({
 					/>
 
 					{groupedByRowData?.payload?.data?.total &&
-						groupedByRowData?.payload?.data?.total > 10 ? (
+					groupedByRowData?.payload?.data?.total > 10 ? (
 						<div className="expanded-table-footer">
 							<Button
 								type="default"

@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import { Loader } from '@signozhq/icons';
 import { Button, Input, Spin } from 'antd';
 import cx from 'classnames';
 import OverlayScrollbar from 'components/OverlayScrollbar/OverlayScrollbar';
@@ -22,7 +23,6 @@ import { Span } from 'types/api/trace/getTraceV2';
 import { FunnelData } from 'types/api/traceFunnels';
 
 import './AddSpanToFunnelModal.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 enum ModalView {
 	LIST = 'list',

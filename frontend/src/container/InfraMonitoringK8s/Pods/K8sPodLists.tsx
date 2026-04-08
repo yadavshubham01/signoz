@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux';
+import { Loader } from '@signozhq/icons';
 import {
 	Button,
 	Spin,
@@ -60,7 +61,6 @@ import {
 import PodDetails from './PodDetails/PodDetails';
 
 import '../InfraMonitoringK8s.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 function K8sPodsList({
 	isFiltersVisible,

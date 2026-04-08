@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CaretDownOutlined } from '@ant-design/icons';
+import { Loader } from '@signozhq/icons';
 import {
 	Modal,
 	Select,
@@ -23,7 +24,6 @@ import {
 import { v4 as uuid } from 'uuid';
 
 import './MessagingQueueHealthCheck.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 interface AttributeCheckListProps {
 	visible: boolean;

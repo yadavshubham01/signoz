@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
+import { Loader } from '@signozhq/icons';
 import { Empty, Spin } from 'antd';
 import {
 	BarController,
@@ -16,7 +17,6 @@ import { useFunnelStepsGraphData } from 'hooks/TracesFunnels/useFunnels';
 import { useFunnelContext } from 'pages/TracesFunnels/FunnelContext';
 
 import './FunnelGraph.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 // Register required components
 Chart.register(

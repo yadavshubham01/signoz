@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { useSelector } from 'react-redux'; // old code, TODO: fix this correctly
+import { Loader } from '@signozhq/icons';
 import { SearchOutlined, SyncOutlined } from '@ant-design/icons';
 import { Button, Input, Spin } from 'antd';
 import cx from 'classnames';
@@ -59,7 +60,6 @@ import { GraphContainer, TimeContainer } from './styles';
 import { FullViewProps } from './types';
 
 import './WidgetFullView.styles.scss';
-import { Loader } from '@signozhq/icons';
 
 function FullView({
 	widget,
@@ -344,8 +344,8 @@ function FullView({
 									version={selectedDashboard?.data?.version || 'v3'}
 									isListViewPanel={selectedPanelType === PANEL_TYPES.LIST}
 									signalSourceChangeEnabled
-									// filterConfigs={filterConfigs}
-									// queryComponents={queryComponents}
+								// filterConfigs={filterConfigs}
+								// queryComponents={queryComponents}
 								/>
 								<RightToolbarActions
 									onStageRunQuery={(): void => {

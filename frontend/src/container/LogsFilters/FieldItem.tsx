@@ -1,4 +1,5 @@
 import { ReactNode, useCallback, useMemo, useState } from 'react';
+import { Loader } from '@signozhq/icons';
 import { Button, Popover, Spin, Typography } from 'antd';
 import { useIsDarkMode } from 'hooks/useDarkMode';
 import {
@@ -9,7 +10,6 @@ import {
 
 import { ICON_STYLE } from './config';
 import { Field } from './styles';
-import { Loader } from '@signozhq/icons';
 
 function FieldItem({
 	name,

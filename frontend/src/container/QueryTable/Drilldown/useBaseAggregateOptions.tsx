@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LinkOutlined } from '@ant-design/icons';
+import { Loader } from '@signozhq/icons';
 import OverlayScrollbar from 'components/OverlayScrollbar/OverlayScrollbar';
 import { QueryParams } from 'constants/query';
 import { PANEL_TYPES } from 'constants/queryBuilder';
@@ -20,7 +21,6 @@ import { getDataLinks } from './dataLinksUtils';
 import { getAggregateColumnHeader, getViewQuery } from './drilldownUtils';
 import { getBaseContextConfig } from './menuOptions';
 import { AggregateData } from './useAggregateDrilldown';
-import { Loader } from '@signozhq/icons';
 
 interface UseBaseAggregateOptionsProps {
 	query: Query;
